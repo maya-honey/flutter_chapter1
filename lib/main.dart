@@ -33,11 +33,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _type = "偶数";
 
   // 5. カウンタが押された時のメソッド
   void _incrementCounter() {
     setState(() {
       _counter++;
+      if (_counter % 2 == 0) {
+        _type = "偶数";
+      } else {
+        _type = "奇数";
+      }
     });
   }
 
@@ -56,12 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
           '$_counter',
           style: Theme.of(context).textTheme.headline4,
         ),
-        const Text("Hello,World"),
-        const Text("ハローワールド"),
-        TextButton(
-          onPressed: () => {print("ボタンが押された")},
-          child: const Text("テキストボタン"),
-        ),
+        Text(
+          '$_type',
+          style: Theme.of(context).textTheme.headline5,
+          ),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
