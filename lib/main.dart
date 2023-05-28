@@ -52,6 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ]),
       ),
       body: Column(children: [
+        Text(
+          '$_counter',
+          style: Theme.of(context).textTheme.headline4,
+        ),
         const Text("Hello,World"),
         const Text("ハローワールド"),
         TextButton(
@@ -81,8 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ]),
       // 右下の「＋」ボタンに対応するフローティングアクションボタン
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {print("押したね？")},
-        child: const Icon(Icons.timer),
+        onPressed: () => {_incrementCounter()},
+        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       drawer: const Drawer(
         child: Center(child: Text("Drawer")),
