@@ -2,6 +2,8 @@ import 'package:chapter1/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'page1.dart';
+import 'page2.dart';
+import 'page3.dart';
 
 // 1.エントリーポイントのmain関数
 void main() {
@@ -22,6 +24,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        "/page1": (BuildContext context) => Page1(),
+        "/page2": (BuildContext context) => Page2(),
+        "/page3": (BuildContext context) => Page3(),
+      },
     );
   }
 }
@@ -64,9 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Icon(FontAwesomeIcons.gift, color: Colors.teal),
         TextButton(
           onPressed:() => {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              return Page1();
-            }))
+            Navigator.of(context).pushNamed("/page1")
           },
           child: const Text("進む", style: TextStyle(fontSize: 80)),
         ),
