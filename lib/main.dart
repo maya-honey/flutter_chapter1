@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // 1.エントリーポイントのmain関数
 void main() {
@@ -58,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         if (_counter % 2 == 0)
           const Text('偶数なので表示', style: TextStyle(fontSize: 20, color: Colors.red)),
+        Icon(FontAwesomeIcons.gift, color: Colors.teal),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
