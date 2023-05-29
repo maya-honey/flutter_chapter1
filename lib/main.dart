@@ -1,5 +1,7 @@
+import 'package:chapter1/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'page1.dart';
 
 // 1.エントリーポイントのmain関数
 void main() {
@@ -52,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Text("初めてのタイトル"),
         ]),
       ),
-      body: Column(children: [
+      body:Column(children: [
         Text(
           '$_counter',
           style: Theme.of(context).textTheme.headline4,
@@ -60,6 +62,14 @@ class _MyHomePageState extends State<MyHomePage> {
         if (_counter % 2 == 0)
           const Text('偶数なので表示', style: TextStyle(fontSize: 20, color: Colors.red)),
         Icon(FontAwesomeIcons.gift, color: Colors.teal),
+        TextButton(
+          onPressed:() => {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return Page1();
+            }))
+          },
+          child: const Text("進む", style: TextStyle(fontSize: 80)),
+        ),
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
@@ -80,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ]
           )
-      ]),
+      ]), 
       // 右下の「＋」ボタンに対応するフローティングアクションボタン
       floatingActionButton: FloatingActionButton(
         onPressed: () => {_incrementCounter()},
